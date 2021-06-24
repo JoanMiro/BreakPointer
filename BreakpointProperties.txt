@@ -1,0 +1,25 @@
+Breakpoint properties
+---------------------
+
+Type
+Name
+LocationType
+FunctionName
+FunctionLineOffset
+FunctionColumnOffset
+File
+FileLine
+FileColumn
+ConditionType
+Condition
+Language	C#
+HitCountType
+HitCountTarget
+Enabled
+Tag
+CurrentHits
+Program
+DTE
+Parent
+Collection
+Children
