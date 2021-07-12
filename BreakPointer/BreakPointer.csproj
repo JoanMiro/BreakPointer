@@ -50,6 +50,9 @@
     <Compile Include="BreakPointerWindowControl.xaml.cs">
       <DependentUpon>BreakPointerWindowControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BreakpointManager.cs" />
+    <Compile Include="WorkingBreakpoints.cs" />
+    <Compile Include="FilteredBreakpoints.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BreakPointerPackage.cs" />
   </ItemGroup>
@@ -93,7 +96,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\BreakPointerWindowCommand.png" />
+    <Content Include="Resources\BreakPointerWindowCommand.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <VSCTCompile Include="BreakPointerPackage.vsct">
       <ResourceName>Menus.ctmenu</ResourceName>
     </VSCTCompile>

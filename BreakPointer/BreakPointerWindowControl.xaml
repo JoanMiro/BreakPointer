@@ -16,20 +16,35 @@
         </Grid.RowDefinitions>
         <ToolBarTray Grid.Row="0">
             <ToolBar>
-                <Button Content="Fred" />
-                <Button Content="Barney" />
+                <Button Content="Delete" />
                 <Separator />
-                <Button Content="Wilma" />
-                <Button Content="Betty" />
+                <Button Content="Delete All" />
+                <Button Content="Disable All" />
+                <Separator />
+                <Button Content="Select Columns" />
             </ToolBar>
         </ToolBarTray>
         <DataGrid Grid.Row="1" x:Name="BreakpointsListView" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTemplateColumn Header="Name">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="File" Binding="{Binding File}" />
                 <DataGridTextColumn Header="Type" Binding="{Binding Type}"/>
                 <DataGridTextColumn Header="Condition" Binding="{Binding Condition}"/>
                 <DataGridTextColumn Header="Hit Count" Binding="{Binding CurrentHits}"/>
-                <DataGridCheckBoxColumn Header="Enabled" Binding="{Binding Enabled}"/>
+                <DataGridCheckBoxColumn IsReadOnly="False" Header="Enabled" Binding="{Binding Enabled, Mode=TwoWay}"/>
+                <!--<DataGridTemplateColumn Header="Enabled">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Enabled}"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>-->
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

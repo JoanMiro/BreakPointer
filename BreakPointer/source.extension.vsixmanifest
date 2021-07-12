@@ -4,6 +4,7 @@
         <Identity Id="BreakPointer.5e00afed-c7bf-4180-b8ba-f118f5a84a63" Version="1.0" Language="en-US" Publisher="Gordon Mackie" />
         <DisplayName>BreakPointer</DisplayName>
         <Description xml:space="preserve">Breakpoint utilities</Description>
+        <Icon>Resources\BreakPointerWindowCommand.png</Icon>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[16.0, 17.0)" />

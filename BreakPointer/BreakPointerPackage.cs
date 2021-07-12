@@ -36,8 +36,6 @@ namespace BreakPointer
         /// </summary>
         public const string PackageGuidString = "74b6b839-bca7-47a9-a75e-a072af814bbe";
 
-        #region Package Members
-
         /// <summary>
         /// Initialization of the package; this method is called right after the package is sited, so this is the place
         /// where you can put all the initialization code that rely on services provided by VisualStudio.
@@ -52,7 +50,5 @@ namespace BreakPointer
             await this.JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
             await BreakPointerWindowCommand.InitializeAsync(this);
         }
-
-        #endregion
     }
 }

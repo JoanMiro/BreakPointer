@@ -24,24 +24,12 @@
         public BreakPointerWindowControl()
         {
             this.InitializeComponent();
+            var breakpointManager = new BreakpointManager();
             ThreadHelper.ThrowIfNotOnUIThread();
             // var debuggerOld = this.GetInstances().First().Debugger;
-            var debugger = this.GetDebugger();
-            this.BreakpointsListView.ItemsSource = debugger.Breakpoints;
-            Debug.WriteLine(this.BreakpointsListView.ItemsSource);
-        }
-
-        private Debugger GetDebugger()
-        {
-            ThreadHelper.ThrowIfNotOnUIThread();
-            var dte = (DTE)Marshal.GetActiveObject("VisualStudio.DTE.16.0");
-            //var dte2 = (DTE)this.ServiceProvider.GetService(typeof(DTE));
-            if (dte == null)
-            {
-                throw new ArgumentNullException(nameof(dte));
-            }
-
-            return dte.Debugger;
+            //var debugger = this.GetDebugger();
+            Debug.WriteLine(breakpointManager.BreakpointsForClass());
+            this.BreakpointsListView.ItemsSource = breakpointManager.Breakpoints;
         }
 
         private IEnumerable<DTE> GetInstances()
